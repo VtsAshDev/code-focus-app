@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withRepeat,
   withTiming,
-  withSequence,
   ReduceMotion,
 } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -52,15 +44,15 @@ export function HomeScreen({
 
   const handleStartPressIn = () => {
     if (isLoading) return;
-    startBtnScale.value = withTiming(0.96, { 
+    startBtnScale.value = withTiming(0.96, {
       duration: 80,
-      reduceMotion: ReduceMotion.Never 
+      reduceMotion: ReduceMotion.Never,
     });
   };
   const handleStartPressOut = () => {
-    startBtnScale.value = withTiming(1, { 
+    startBtnScale.value = withTiming(1, {
       duration: 100,
-      reduceMotion: ReduceMotion.Never 
+      reduceMotion: ReduceMotion.Never,
     });
   };
 
@@ -105,7 +97,10 @@ export function HomeScreen({
           >
             C O D E _ F O C U S
           </Text>
-          <View style={{ opacity: isCursorVisible ? 1 : 0 }} importantForAccessibility="no">
+          <View
+            style={{ opacity: isCursorVisible ? 1 : 0 }}
+            importantForAccessibility="no"
+          >
             <View
               style={[
                 styles.terminalCursor,
@@ -117,7 +112,7 @@ export function HomeScreen({
 
         {/* Tagline */}
         <Text style={styles.taglineText}>
-          // FOCO ABSOLUTO PARA DESENVOLVEDORES
+          {"// FOCO ABSOLUTO PARA DESENVOLVEDORES"}
         </Text>
       </View>
 
@@ -145,9 +140,7 @@ export function HomeScreen({
             accessibilityLabel="Começar o modo foco"
             accessibilityHint="Inicia uma nova sessão de foco"
           >
-            <Text style={styles.primaryButtonText}>
-              COMEÇAR
-            </Text>
+            <Text style={styles.primaryButtonText}>COMEÇAR</Text>
           </Pressable>
         </Animated.View>
 
