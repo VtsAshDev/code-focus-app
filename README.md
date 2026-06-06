@@ -20,17 +20,17 @@ O design system adota o padrão "Tech Minimalist", exigindo renderização de fu
 
 O App atua como o componente de interação e detecção de estado nativo do dispositivo do usuário.
 
-* Interface visual e gestão de feedback (cronômetro).
-* Comunicação segura via API RESTful sobre HTTPS com o servidor.
-* Geração de identificadores de sessão.
-* Observação de ciclo de vida do aplicativo móvel.
+- Interface visual e gestão de feedback (cronômetro).
+- Comunicação segura via API RESTful sobre HTTPS com o servidor.
+- Geração de identificadores de sessão.
+- Observação de ciclo de vida do aplicativo móvel.
 
 ---
 
 ## 3. Regras de Negócio (Cliente)
 
-* **RN01 - Gatilho de Interrupção:** O cliente utilizará a API nativa `AppState`. A transição do estado `active` para `background` durante uma sessão ativa aciona o encerramento imediato com envio de falha para a API.
-* **RN04 - Geração de Identificadores:** Identificadores únicos universais (UUID V4) de sessões são gerados localmente pelo cliente antes do envio ao servidor, otimizando a responsividade da interface sem depender de round-trips da rede para iniciar a sessão visualmente.
+- **RN01 - Gatilho de Interrupção:** O cliente utilizará a API nativa `AppState`. A transição do estado `active` para `background` durante uma sessão ativa aciona o encerramento imediato com envio de falha para a API.
+- **RN04 - Geração de Identificadores:** Identificadores únicos universais (UUID V4) de sessões são gerados localmente pelo cliente antes do envio ao servidor, otimizando a responsividade da interface sem depender de round-trips da rede para iniciar a sessão visualmente.
 
 ---
 
@@ -39,6 +39,7 @@ O App atua como o componente de interação e detecção de estado nativo do dis
 O ambiente de desenvolvimento do App deve ser provisionado seguindo a ordem estrita abaixo:
 
 1. Provisionar pacote de inicialização via Node.js:
+
 ```bash
 npx create-expo-app codefocus-app
 ```
